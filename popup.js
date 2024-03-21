@@ -25,8 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         function (results) {
           if (chrome.runtime.lastError) {
-            console.error(chrome.runtime.lastError);
-            translationResult.textContent = chrome.runtime.lastError;
+            translationResult.textContent = "Error";
           } else {
             const selectedText = results[0].result;
             if (selectedText.trim() === '') {
