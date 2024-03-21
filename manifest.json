@@ -1,18 +1,22 @@
 {
   "manifest_version": 3,
-  "name": "OpenAI PvBang Extension",
+  "name": "PvBang OpenAI",
   "version": "1.0",
-  "description": "Using OpenAI for Test",
+  "description": "",
   "permissions": [
     "activeTab",
     "contextMenus",
     "storage",
-    "scripting"
+    "scripting",
+    "clipboardRead"
   ],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
       "16": "shark.png"
     }
+  },
+  "background": {
+    "service_worker": "background.js"
   }
 }
