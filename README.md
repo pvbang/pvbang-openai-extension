@@ -1,3 +1,12 @@
+### Function
+```bash
+# Chome Extention
+Chức năng: 
+- Gọi đến openai để và hiển thị câu trả lời tự động sau khi select text trên màn hình, nếu không có select sẽ lấy text đã copy trong clipboad.
+- Tự động lưu kết quả vào clipboad.
+```
+
+
 ### Setup
 ```bash
 1. Thay thế apiKey của openai ở dòng 58 file popup.js
