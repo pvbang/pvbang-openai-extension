@@ -2,6 +2,17 @@ document.addEventListener('DOMContentLoaded', function () {
   const selectedTextElement = document.getElementById('selectedText');
   const translationResult = document.getElementById('translationResult');
 
+  // Hàm để thực hiện việc sao chép văn bản vào clipboard
+  function copyToClipboard(text) {
+    navigator.clipboard.writeText(text)
+      .then(() => {
+        console.log('Text copied to clipboard');
+      })
+      .catch(err => {
+        console.error('Failed to copy text: ', err);
+      });
+  }
+
   // Hàm để thực hiện việc dịch tự động khi tài liệu được tải xong
   function autoTranslate() {
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
@@ -66,12 +77,16 @@ document.addEventListener('DOMContentLoaded', function () {
         },
       })
       .then(function (response) {
+        document.getElementById("myload").style.display = "none";
+
         const translatedText = response.data.choices[0].message.content;
         console.log(response);
         console.log(translatedText);
         translationResult.textContent = translatedText;
-        translationResult.style.overflowY = "auto"; // Thêm thuộc tính cuộn
-        translationResult.style.maxHeight = "200px"; // Đặt chiều cao tối đa của phần tử
+        translationResult.style.overflowY = "auto"; 
+        translationResult.style.maxHeight = "200px"; 
+
+        copyToClipboard(translatedText);
       })
       .catch(function (error) {
         translationResult.textContent = error;

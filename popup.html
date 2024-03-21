@@ -2,19 +2,23 @@
 <html>
 
 <head>
-  <title>OpenAI Test</title>
+  <title>PvBang OpenAI</title>
+
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="popup.css">
 </head>
 
-<body class="popup">
+<body class="my-popup">
   <div>
-    <b>Q: </b><p id="selectedText"></p>
-    <!-- <button id="translateButton">Hehe</button> -->
+    <b class="my-text-size">Q: </b>
+    <p id="selectedText" class="my-text-size"></p>
   </div>
+
+  <b class="my-text-size">A: </b>
+  <div class="my-margin-bottom-8"></div>
+  <i id="myload" class='bx bx-loader-alt bx-spin'></i>
+  <div id="translationResult" class="my-text-size"></div>
   <br>
-  <b>A: </b>
-  <div id="ss1"></div>
-  <div id="translationResult"></div>
 
   <script src="axios.min.js"></script>
   <script src="popup.js"></script>

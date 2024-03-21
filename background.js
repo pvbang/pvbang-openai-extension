@@ -22,9 +22,13 @@ chrome.contextMenus.onClicked.addListener(function(info, tab) {
       if (!results || !results[0]) return;
       const textToUse = results[0].result || '';
       chrome.storage.local.set({ selectedText: textToUse }, function() {
-        // Mở popup khi người dùng chọn menu chuột phải
-        chrome.action.openPopup();
+        // Lưu vị trí click chuột
+        chrome.storage.local.set({ clickPosition: { x: info.pageX, y: info.pageY } }, function() {
+          // Mở popup tại vị trí click chuột
+          chrome.action.openPopup();
+        });
       });
     });
   }
 });
+
