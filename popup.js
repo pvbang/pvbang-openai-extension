@@ -32,14 +32,14 @@ document.addEventListener('DOMContentLoaded', function () {
               // Nếu không có văn bản được chọn, đọc văn bản từ clipboard
               navigator.clipboard.readText().then((clipboardText) => {
                 selectedTextElement.textContent = clipboardText;
-                translateText(clipboardText); // Dịch tự động ngay sau khi đọc được văn bản từ clipboard
+                translateText(clipboardText); 
               }).catch((error) => {
                 console.error('Error reading clipboard:', error);
                 translationResult.textContent = 'Error reading clipboard';
               });
             } else {
               selectedTextElement.textContent = selectedText;
-              translateText(selectedText); // Dịch tự động ngay sau khi lấy được văn bản được chọn
+              translateText(selectedText); 
             }
           }
         }

@@ -1,6 +1,6 @@
 ### Function
 ```bash
-# Chome Extention
+# Chome Extension
 Chức năng: 
 - Gọi đến openai để và hiển thị câu trả lời tự động sau khi select text trên màn hình, nếu không có select sẽ lấy text đã copy trong clipboad.
 - Tự động lưu kết quả vào clipboad.
