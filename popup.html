@@ -1,24 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 
 <head>
-  <title>PvBang OpenAI</title>
-
+  <meta charset="UTF-8">
+  <title>Phan V. Bang AI</title>
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="popup.css">
 </head>
 
-<body class="my-popup">
-  <div>
-    <b class="my-text-size">Q: </b>
-    <p id="selectedText" class="my-text-size"></p>
-  </div>
+<body>
+  <div class="ai-assistant">
+    <!-- Header -->
+    <div class="header">
+      <div class="logo">
+        <i class='bx bx-brain'></i>
+        <span>Phan V. Bang AI</span>
+      </div>
+      <div class="status connected" id="status">
+        <i class='bx bx-wifi'></i>
+        <span>Đã kết nối</span>
+      </div>
+    </div>
 
-  <b class="my-text-size">A: </b>
-  <div class="my-margin-bottom-8"></div>
-  <i id="myload" class='bx bx-loader-alt bx-spin'></i>
-  <div id="translationResult" class="my-text-size"></div>
-  <br>
+    <div class="content-wrapper">
+      <div class="main-content">
+        <!-- Selected Text Display -->
+        <div class="selected-text-container" id="selectedTextContainer" style="display: none;">
+          <div class="label">
+            <i class='bx bx-text'></i>
+            <span>Văn bản đã chọn</span>
+          </div>
+          <textarea class="selected-text" id="selectedText" placeholder="Nhập hoặc dán văn bản cần xử lý..."></textarea>
+        </div>
+
+        <!-- Custom Question Input -->
+        <div class="question-input-container" id="questionContainer" style="display: none;">
+          <div class="input-group">
+            <input type="text" id="customQuestion" placeholder="Nhập câu hỏi của bạn...">
+            <button id="askButton">
+              <i class='bx bx-send'></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Loading -->
+        <div class="loading-container" id="loadingContainer" style="display: none;">
+          <div class="loading">
+            <i class='bx bx-loader-alt'></i>
+            <span>Đang xử lý...</span>
+          </div>
+        </div>
+
+        <!-- Result Display -->
+        <div class="result-container" id="resultContainer" style="display: none;">
+          <div class="result-header">
+            <div class="result-title" id="resultTitle">
+              <i class='bx bx-check-circle'></i>
+              <span>Kết quả</span>
+            </div>
+            <div class="result-actions">
+              <button id="copyResult" title="Sao chép">
+                <i class='bx bx-copy'></i>
+              </button>
+              <button id="closeResult" title="Đóng">
+                <i class='bx bx-x'></i>
+              </button>
+            </div>
+          </div>
+          <div class="result-content" id="resultContent"></div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons" id="actionButtons">
+          <button class="action-btn question" data-action="question">
+            <span>Hỏi đáp</span>
+          </button>
+          <button class="action-btn translate" data-action="translate">
+            <span>Dịch</span>
+          </button>
+          <button class="action-btn summary" data-action="summary">
+            <span>Tóm tắt</span>
+          </button>
+          <button class="action-btn analyze" data-action="analyze">
+            <span>Phân tích</span>
+          </button>
+          <button class="action-btn code" data-action="code">
+            <span>Giải thích Code</span>
+          </button>
+          <button class="action-btn quiz" data-action="quiz">
+            <span>Trắc nghiệm</span>
+          </button>
+          
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <div class="credits">Powered by Phan V. Bang AI</div>
+      </div>
+    </div>
+  </div>
 
   <script src="axios.min.js"></script>
   <script src="popup.js"></script>

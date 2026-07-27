@@ -1,14 +1,17 @@
 {
   "manifest_version": 3,
-  "name": "PvBang OpenAI",
-  "version": "1.0",
-  "description": "",
+  "name": "Phan V. Bang AI",
+  "version": "2.0",
+  "description": "Trợ lý AI thông minh - Tóm tắt, dịch thuật, phân tích và trả lời câu hỏi",
   "permissions": [
     "activeTab",
     "contextMenus",
     "storage",
     "scripting",
     "clipboardRead"
+  ],
+  "host_permissions": [
+    "https://generativelanguage.googleapis.com/*"
   ],
   "action": {
     "default_popup": "popup.html",
@@ -18,5 +21,11 @@
   },
   "background": {
     "service_worker": "background.js"
+  },
+  "commands": {
+    "inject-script": {
+      "suggested_key": "Alt+Shift+Q",
+      "description": "Mở trợ lý AI"
+    }
   }
 }
