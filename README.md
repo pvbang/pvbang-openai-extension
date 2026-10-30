@@ -25,7 +25,7 @@
 ## 🚀 Cài đặt
 
 ### 1. Chuẩn bị
-- API key Google Gemini đã được tích hợp sẵn
+- Lấy API key Google Gemini (https://aistudio.google.com/apikey) và điền vào `GEMINI_API_KEY` trong `popup.js` (không commit key lên git)
 - Trình duyệt Chrome/Edge
 
 ### 2. Cài đặt Extension
